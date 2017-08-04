@@ -1,7 +1,7 @@
 # ddns
 Super-basic dynamic DNS system for a zone file hosted by NSD server. Server side is a Flask application served by gunicorn behind a nginx reverse proxy. Client side is a shell script run via cron.
 
-Stole the idea from [iMil](https://imil.net/blog/2017/02/20/20-lines-dynamic-DNS-system/).
+Stole the idea and most of the code from [iMil](https://imil.net/blog/2017/02/20/20-lines-dynamic-DNS-system/).
 
 ## Server side
 ### Customize files
