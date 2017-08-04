@@ -1,0 +1,20 @@
+#!/bin/sh
+
+auth="__username__:__password__"
+host="__host__"
+notify_address="__notification_address__"
+server="__ddns_server__"
+
+# here retrieve your actual public IP from a website like httpbin.org
+curip=$(curl -s -o- https://ifconfig.co/)
+
+# fetch recorded IP address
+homeip=$(curl -u ${auth} -s -o- https://${server}/query/${host})
+
+if [ "${curip}" != "${homeip}" ]; then
+  warnmsg="/!\\ home IP changed to ${curip} /!\\"
+  echo "${warnmsg}" | mail -s "${warnmsg}" ${notify_address}
+
+  curl -u ${auth} \
+    -X POST https://${server}/update/${host}/${curip}
+fi
