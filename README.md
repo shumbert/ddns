@@ -12,8 +12,7 @@ Update the following files with your information, such as domain name, authentic
 
 ### Install software
 ```
-sudo apt install python3 python3-flask python3-pip nginx
-sudo pip3 install gunicorn # debian gunicorn package is python 2.7
+sudo apt install gunicorn3 python3 python3-flask python3-pip nginx
 ```
 
 ### Set up the application
