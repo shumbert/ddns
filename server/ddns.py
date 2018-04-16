@@ -6,7 +6,7 @@ import re
 
 app = Flask(__name__)
 domain = '__domain__'
-zone_file = '/etc/nsd/' + domain + '.zone'
+zone_file = '/etc/nsd/master/' + domain
 
 def update_record(line, ip):
     m = re.match('(.+?)\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}', line)
